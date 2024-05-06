@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <!----header end----->
+    <div class="page_header_default style_one blog_single_pageheader">
+        <div class="parallax_cover">
+            <div class="simpleParallax"><img src="{% static 'assets/images/page-header-default.jpg' %}" alt="bg_image"
+                                             class="img-fluid"></div>
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="index.html">خانه</a></li>
+                                <li class="active">وبلاگ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meta_blog_single">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="left_side">
+                            <div class="category"><a href="blog-single.html#" class="categors"><i
+                                    class="icon-folder"></i>مربیگری</a>
+                            </div>
+                            <div class="comments">
+                                <i class="icon-text"></i>
+                                <a href="blog-single.html#comment" class="کامنت ها بسته شده">کامنت بگذارید</a>
+                            </div>
+                        </div>
+                        <div class="right_side">
+                            <div class="content_box_auht d-flex">
+                                <div class="authour_content">
+                                    <h6>توسط</h6>
+                                    <h4>جمشید ایرانی</h4>
+                                </div>
+                                <div class="authour_image">
+                                    <img alt="تصویر"
+                                         src="https://secure.gravatar.com/avatar/7ea8dafdb4e8f044dda06278138291dd?s=50 و d=mm و r=g"
+                                         height="50" width="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----header----->
+    <!----page-CONTENT----->
+    <div id="content" class="site-content ">
+        <div class="auto-container">
+            <div class="row default_row">
+                <div id="primary" class="content-area service col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <main id="main" class="site-main" role="main">
+                        <!--===============spacing==============-->
+                        <div class="pd_top_90"></div>
+                        <!--===============spacing==============-->
+
+                        <section class="blog_single_details_outer">
+                            {% for i in blog_details %}
+                                <div class="single_content_upper">
+                                    <div class="blog_feature_image">
+                                        <h5>{{ i.title }}</h5>
+                                        <img src="{{ i.image.url }}"
+                                             class="wp-post-image" alt="تصویر">
+                                        <h5>{{ i.description }}</h5>
+                                    </div>
+                                    <div class="post_single_content">
+                                        <h5></h5>
+                                        <h5 style="color: #239293">نوین الکترونیک</h5>
+                                        <div class="quotes_box style_one">
+                                            <div class="icon">
+                                                <img src="{% static 'assets/images/quotes.png' %}" class="svg_image"
+                                                     alt="icon png">
+                                            </div>
+                                            <div class="content">
+                                                <h6>کلید برای ما، شماره یک، همیشه استخدام افراد بسیار باهوش بوده
+                                                    است.</h6>
+                                                <h3> لامونت شان</h3>
+                                            </div>
+                                        </div>
+                                        <!--===============spacing==============-->
+                                        <div class="pd_bottom_25"></div>
+                                        <!--===============spacing==============-->
+
+                                        <!--===============spacing==============-->
+                                        <div class="pd_bottom_15"></div>
+
+
+                                        <!--===============spacing==============-->
+                                        <div class="pd_bottom_15"></div>
+                                        <!--===============spacing==============-->
+                                    </div>
+                                </div>
+                                <div class="single_content_lower">
+                                    <div class="tags_and_share">
+                                        <div class="d-flex">
+                                            <div class="tags_content left_one">
+                                                <div class="box_tags_psot">
+                                                    <div class="title">برچسب ها</div>
+                                                    <a class="btn" href="blog-single.html#">#ارزیابی</a>
+                                                    <a class="btn" href="blog-single.html#">#قرارداد</a>
+                                                </div>
+                                            </div>
+                                            {#                                        <div class="share_content right_one">#}
+                                            {#                                            <div class="share_socail">#}
+                                            {#                                                <div class="title">اشتراک گذاری</div>#}
+                                            {#                                                <button class="m_icon" title="facebook" data-sharer="facebook"#}
+                                            {#                                                        data-title="بلاگ تکی" data-url="blog-single.html">#}
+                                            {#                                                    <i class="fa fa-facebook"></i>#}
+                                            {#                                                </button>#}
+                                            {#                                                <button class="m_icon" title="twitter" data-sharer="twitter"#}
+                                            {#                                                        data-title="بلاگ تکی" data-url="blog-single.html">#}
+                                            {#                                                    <i class="fa fa-twitter"></i>#}
+                                            {#                                                </button>#}
+                                            {#                                                <button class="m_icon" title="whatsapp" data-sharer="whatsapp"#}
+                                            {#                                                        data-title="بلاگ تکی" data-url="blog-single.html">#}
+                                            {#                                                    <i class="fa fa-whatsapp"></i>#}
+                                            {#                                                </button>#}
+                                            {#                                                <button class="m_icon" title="telegram" data-sharer="telegram"#}
+                                            {#                                                        data-title="بلاگ تکی" data-url="blog-single.html"#}
+                                            {#                                                        data-to="+44555-03564">#}
+                                            {#                                                    <i class="fa fa-telegram"></i>#}
+                                            {#                                                </button>#}
+                                            {#                                                <button class="m_icon" title="skype" data-sharer="skype"#}
+                                            {#                                                        data-url="blog-single.html" data-title="بلاگ تکی">#}
+                                            {#                                                    <i class="fa fa-skype"></i>#}
+                                            {#                                                </button>#}
+                                            {#                                            </div>#}
+                                            {#                                        </div>#}
+                                        </div>
+                                    </div>
+                                    <div class="sec_comments padding-t-8 padding-b-3" id="comment">
+                                        <div class="container_no">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-12">
+                                                    <div id="respond" class="comment-respond">
+                                                        <h3 id="reply-title" class="comment-reply-title">
+                                                            کامنت بگذارید !
+
+                                                        </h3>
+                                                        <form action="blog-single.html#" method="post"
+                                                              id="commentform" class="comment-form">
+                                                            <p class="title_para">آدرس ایمیل شما منتشر نمیشود .</p>
+                                                            <p class="comment-form-comment"><label for="comment">یک
+                                                                کامنت
+                                                                بگذارید</label><textarea
+                                                                    placeholder="کامنت خود را اینجا بنویسید..."
+                                                                    id="comment" name="comment" rows="12"
+                                                                    aria-required="true"></textarea></p>
+                                                            <p class="comment-form-author">
+                                                                <label for="name">نام کامل</label>
+                                                                <input id="author" placeholder="مثال : فرهام اقدسی"
+                                                                       name="author"
+                                                                       type="text" value="" size="30"
+                                                                       aria-required="true">
+                                                            </p>
+                                                            <p class="comment-form-email">
+                                                                <label for="comment">آدرس ایمیل</label>
+                                                                <input id="email" placeholder="مثال. john@mail.com"
+                                                                       name="email"
+                                                                       type="text" value="" size="30"
+                                                                       aria-required="true">
+                                                            </p>
+                                                            <p class="comment-form-url">
+                                                                <label for="name">آدرس وبسایت</label>
+                                                                <input id="url" name="url"
+                                                                       placeholder="مثال. www.example.com"
+                                                                       type="text" value="" size="30">
+                                                            </p>
+                                                            <p class="custom-control custom-checkbox">
+                                                                <input id="wp-comment-cookies-consent"
+                                                                       class="custom-control-input"
+                                                                       name="wp-comment-cookies-consent" type="checkbox"
+                                                                       value="">
+                                                                <label class="custom-control-label pl-1 c-gray"
+                                                                       for="wp-comment-cookies-consent">نام و ایمیل من
+                                                                    را در
+                                                                    این ذخیره کنید
+                                                                    مرورگر برای دفعه بعد که نظر می دهم.</label>
+                                                            </p>
+                                                            <div class="clearfix"></div>
+                                                            <p class="form-submit">
+                                                                <input name="submit" type="submit" id="submit"
+                                                                       class="submit"
+                                                                       value="ارسال پیام">
+                                                                <input type="hidden" name="comment_post_ID" value="350"
+                                                                       id="comment_post_ID">
+                                                                <input type="hidden" name="comment_parent"
+                                                                       id="comment_parent"
+                                                                       value="0">
+                                                            </p>
+                                                        </form>
+                                                    </div>
+                                                    <!-- #respond -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </section>
+                            {% endfor %}
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_70"></div>
+                        <!--===============spacing==============-->
+                    </main>
+                </div>
+                <aside id="secondary" class="widget-area all_side_bar col-lg-4 col-md-12 col-sm-12">
+                    <div class="side_bar">
+                        <!--===============spacing==============-->
+                        <div class="pd_top_90"></div>
+                        <!--===============spacing==============-->
+
+                        <div class="widgets_grid_box">
+                            <h2 class="widget-title">درباره نویسنده</h2>
+                            {% for i in blog_details %}
+                                <div class="about_authour_widget">
+                                    <h3>سلام ! من {{ i.writer }} ایرانی هستم</h3>
+                                    <img src="{{ i.writer_image.url }}" alt="authourimage">
+                                    <p>{{ i.writer_details }}</p>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="widgets_grid_box">
+                            <h2 class="widget-title">لیست تگ ها</h2>
+                            <div class="wp-block-tag-cloud">
+                                <a href="blog-single.html#">ارزیابی</a>
+                                <a href="blog-single.html#">بیزینس</a>
+                                <a href="blog-single.html#">قرارداد</a>
+                                <a href="blog-single.html#">داده</a>
+                                <a href="blog-single.html#">کارایی</a>
+                                <a href="blog-single.html#">کارمندی</a>
+                                <a href="blog-single.html#">رویه های منابع انسانی</a>
+                                <a href="blog-single.html#">قانونی</a>
+                                <a href="blog-single.html#">مدیریت</a>
+                                <a href="blog-single.html#">تعهدات</a>
+                            </div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_70"></div>
+                        <!--===============spacing==============-->
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <!---newsteller--->
+{% endblock %}

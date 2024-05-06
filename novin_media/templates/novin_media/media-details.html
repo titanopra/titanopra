@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    </div>
+    <!----header end----->
+    <div class="page_header_default style_one blog_single_pageheader">
+        <div class="parallax_cover">
+            <div class="simpleParallax"><img src="{% static 'assets/images/page-header-default.jpg' %}" alt="bg_image"
+                                             class="cover-parallax"></div>
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+                                جزئیات پروژه
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="{% url 'blog:home' %}">خانه</a></li>
+                                <li class="active">جزئیات محصول</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----header----->
+    <!----page-CONTENT----->
+    {% for i in mediaa %}
+        <div id="content" class="site-content ">
+        <section class="project-detail-section">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-12 mb-5 mb-lg-5 mb-xl-0">
+                        <div class="title_all_box style_one dark_color">
+                            <div class="title_sections left">
+                                <h2>{{ i.title }}</h2>
+                            </div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_10"></div>
+                        <!--===============spacing==============-->
+                        <div class="description_box">
+                            <p>{{ i.description }}</p>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_25"></div>
+                        <!--===============spacing==============-->
+                        <div class="row gutter_30px">
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-4 mb-lg-0 mb-xl-0">
+                                <div class="simple_image_boxes">
+                                    <img src="{{ i.image.url }}"
+                                         class="simp_img cover-parallax" alt="تصویر">
+                                </div>
+                                <!--===============spacing==============-->
+                                <div class="pd_bottom_25"></div>
+                                <!--===============spacing==============-->
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                <div class="simple_image_boxes">
+                                    <img src="{{ i.image2.url }}"
+                                         class="simp_img cover-parallax" alt="تصویر">
+                                </div>
+                                <!--===============spacing==============-->
+                                <div class="pd_bottom_25"></div>
+                                <!--===============spacing==============-->
+                            </div>
+                        </div>
+
+                        <h3>{{ i.title2 }}</h3>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_10"></div>
+                        <!--===============spacing==============-->
+                        <div class="description_box">
+                            <p>{{ i.description2 }}</p>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_20"></div>
+                        <!--===============spacing==============-->
+                    </div>
+                    <div class="col-xl-3 col-lg-12">
+                        <div class="project_information">
+                            <h2>اطلاعات محصول</h2>
+                            <div class="project_information_bo">
+                                <div class="repeat_informtion">
+                                    <h6>پردازنده</h6>
+                                    <p>{{ i.cpu }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>صفحه نمایش</h6>
+                                    <p>{{ i.display }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>دوربین</h6>
+                                    <p>{{ i.camera }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>حافظه رم</h6>
+                                    <p>{{ i.ram }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>حافظه داخلی</h6>
+                                    <p>{{ i.Memory }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>سیستم عامل</h6>
+                                    <p>{{ i.os }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>حسگر ها</h6>
+                                    <p>{{ i.Sensors }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>مشخصات ظاهری</h6>
+                                    <p>{{ i.Physical_characteristics }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>باتری</h6>
+                                    <p>{{ i.battry }}</p>
+                                </div>
+                                <div class="repeat_informtion">
+                                    <h6>صدا و ویدیو</h6>
+                                    <p>{{ i.audio_and_video }}</p>
+                                </div>
+                                <a href="project-details.html#" target="_blank" rel="nofollow" class="theme-btn two">علاقه
+                                    مند</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--===============spacing==============-->
+            <div class="pd_bottom_70"></div>
+            <!--===============spacing==============-->
+        </section>
+        <!---newsteller--->
+    {% endfor %}
+{% endblock %}

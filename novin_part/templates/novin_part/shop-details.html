@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <style>
+        .slider {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: slideShow 12s infinite;
+            opacity: 0;
+        }
+
+        .slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .slide:nth-child(2) {
+            animation-delay: 4s;
+        }
+
+        .slide:nth-child(3) {
+            animation-delay: 8s;
+        }
+
+        .slide:nth-child(4) {
+            animation-delay: 12s;
+        }
+
+        @keyframes slideShow {
+            0% {
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <!----header end----->
+    <div class="page_header_default style_one blog_single_pageheader">
+        <div class="parallax_cover">
+            {% for i in partt %}
+                <div class="simpleParallax"><img src="{% static 'assets/images/bus.png' %}"
+                                                 alt="bg_image" class="cover-parallax"></div>
+            {% endfor %}
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+                                جزئیات محصول
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="{% url 'blog:home' %}">خانه</a></li>
+                                <li class="active">جزئیات محصول</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---page header--->
+    <!--===============PAGE CONTENT==============-->
+    <!--===============PAGE CONTENT==============-->
+    <div id="content" class="site-content ">
+        <!--===============default spacing==============-->
+        <div class="pd_top_90"></div>
+        <!--===============default spacing==============-->
+
+        <main id="main" class="site-main products_single" role="main">
+            <section class="default_single_product">
+                {% for i in partt %}
+                    <div class="auto-container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="slider">
+                                <div class="slide">
+                                    <img src="{{ i.image.url }}" alt="Image 1">
+                                </div>
+                                <div class="slide">
+                                    <img src="{{ i.image2.url }}" alt="Image 2">
+                                </div>
+                                <div class="slide">
+                                    <img src="{{ i.image3.url }}" alt="Image 3">
+                                </div>
+                                <div class="slide">
+                                    <img src="{{ i.image4.url }}" alt="Image 4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="summary entry-summary">
+                                <h1 class="product_title entry-title">{{ i.name }}</h1>
+                                <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
+                                        class="woocommerce-Price-currencySymbol"> ریال </span>{{ i.price }}</bdi></span>
+                                </p>
+                                <div class="woocommerce-product-details__short-description">
+                                    <p>{{ i.name }}</p>
+                                </div>
+
+                                <button type="submit" name="add-to-cart" value="2650"
+                                        class="single_add_to_cart_button button alt wp-element-button"
+                                        onclick="window.open('{% url 'shop:go_to_gateway' i.id %}', '_blank');">
+                                    تکمیل فرآیند خرید
+                                </button>
+                                <div class="product_meta">
+                                 <span class="posted_in">موجود در فروشگاه نوین الکترونیک:<a href="shop-details.html"
+                                                                                            rel="tag">{{ i.inventory }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="woocommerce-tabs wc-tabs-wrapper">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane" aria-selected="false">
+                                                توضیحات
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                             aria-labelledby="home-tab" tabindex="0">
+                                        </div>
+                                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                             aria-labelledby="profile-tab" tabindex="0">
+
+                                            <div class="content_box">
+                                                <h2>توضیحات</h2>
+                                                <p>{{ i.about }}</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                             aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="content_box">
+                                                <h2>توضیحات اضافه</h2>
+                                                <table class="woocommerce-product-attributes shop_attributes">
+                                                    <tbody>
+                                                    <tr
+                                                            class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_books">
+                                                        <th class="woocommerce-product-attributes-item__label">کتاب</th>
+                                                        <td class="woocommerce-product-attributes-item__value">
+                                                            <p>کمیک، دی سی</p>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </main>
+
+        <!--===============default spacing==============-->
+        <div class="pd_bottom_50"></div>
+        <!--===============default spacing==============-->
+        <!---newsteller--->
+{% endblock %}

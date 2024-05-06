@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('{% static 'assets/images/home/Untitled-1.png' %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Added to allow buttons to wrap to next line on smaller screens */
+            justify-content: center; /* Centered horizontally */
+            padding: 40px;
+            border-radius: 50px;
+            width: 100%; /* Changed to 100% for responsiveness */
+        }
+
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            padding: 20px; /* Reduced padding for smaller screens */
+            text-align: center;
+            text-decoration: none;
+            border-radius: 30%;
+            font-size: 18px; /* Reduced font size for smaller screens */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px; /* Added margin for better spacing */
+            width: 250px; /* Set a width for better responsiveness */
+            height: 250px; /* Set a height for better responsiveness */
+        }
+
+        .button img {
+            border-radius: 25% / 20%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .button span {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #239293;
+        }
+    </style>
+</head>
+<body>
+<div class="button-container">
+    <a href="{% url 'blog:home' %}" class="button">
+        <img src="{% static 'assets/images/اموزشگاه.png' %}" alt="Home">
+        <span style="">آموزشگاه نوین الکترونیک</span>
+    </a>
+    <a href="{% url 'shop:home' %}" class="button">
+        <img src="{% static 'assets/images/شاپ.png' %}" alt="Shop">
+        <span>نوین پارت</span>
+    </a>
+    <a href="{% url 'fix:home' %}" class="button">
+        <img src="{% static 'assets/images/فیکس.png' %}" alt="Truck">
+        <span>نوین فیکس</span>
+    </a>
+    <a href="{% url 'media:home' %}" class="button">
+        <img src="{% static 'assets/images/تکنوال (2).png' %}" alt="Truck">
+        <span>تکنوال</span>
+    </a>
+</div>
+</body>
+</html>

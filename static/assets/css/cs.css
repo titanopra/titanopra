@@ -1,0 +1,193 @@
+/* Style for the button */
+.chat-box {
+    right: 10px;
+    width: 300px;
+    height: 400px;
+    top: 30px;
+    border: 1px solid #3af5df;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Style the chat messages container */
+.chat-messages {
+    height: 80%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Style the individual chat messages */
+.chat-message {
+    margin-bottom: 10px;
+}
+
+/* Style the admin chat messages */
+.admin-message {
+    background-color: #3bee9a;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start;
+}
+
+/* Style the user chat messages */
+.user-message {
+    background-color: #f1db37;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-end;
+}
+
+/* Style the chat input field */
+.chat-input {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Style the chat input field textarea */
+.chat-input textarea {
+    width: 80%;
+    height: 80%;
+    border: none;
+    resize: none;
+    padding: 5px;
+}
+
+/* Style the chat input field send button */
+.chat-input button {
+    width: 15%;
+    height: 90%;
+    border: none;
+    background-color: hsl(184, 86%, 51%);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: hsl(188, 85%, 55%);
+    color: #092fb8;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Style for the chat window */
+
+.chat-window {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 400px;
+    background-color: #f6f6f6;
+    border: 1px solid #1e76e0a7;
+    display: none;
+    z-index: 99;
+}
+
+.chat-window {
+
+
+    background-repeat: no-repeat;
+    background-size: 400px 500px;
+    padding: 40px 40px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+/* Style for the chat messages */
+.chat-messages {
+    height: 80%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Style for the chat input */
+.chat-input {
+    display: flex;
+    width: 300px;
+    height: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    border-top: 1px solid #ccc;
+}
+
+/* Style for the chat textarea */
+.chat-input textarea {
+    width: 70%;
+    height: 31px;
+    resize: none;
+    border: none;
+    padding: 10px;
+}
+
+/* Style for the chat send button */
+.chat-input button {
+    width: 20%;
+    height: 48px;
+    background-color: #3bf25c;
+    color: #120be4;
+    border: none;
+    cursor: pointer;
+}
+
+.close-button {
+
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+
+}

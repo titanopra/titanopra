@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <!----header end----->
+    <div class="page_header_default style_one ">
+        <div class="parallax_cover">
+            <div class="simpleParallax">
+                <img src="{% static 'assets/images/page-header-default.jpg' %}" alt="bg_image" class="cover-parallax">
+            </div>
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+                                تیم ما
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="{% url 'blog:home' %}">خانه</a></li>
+                                <li class="active">تیم ما</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----header----->
+    <!----page-CONTENT----->
+    <div id="content" class="site-content ">
+        <!---team intro--->
+        <section class="team-intro">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="team_intro_box">
+                            <div class="team_intro_inner">
+                                <div class="image_bg">
+                                    <img src="{% static 'assets/images/10_Post.jpg' %}" class="img-fluid"
+                                         alt="تصویر">
+                                </div>
+                                <div class="team_intro_start">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="left_content">
+                                                <div class="title">
+                                                    <h6>تیم قوی</h6>
+                                                    <h1>بنیاد کسب و کار خود را بسازید</h1>
+                                                </div>
+                                                <div class="quotes">
+                                                    <span class="icon-quote"></span>
+                                                    <h5>کار گروهی رازی است که <br> باعث می شود مردم عادی به <br> دست
+                                                        یابند
+                                                        نتایج غیر معمول.</h5>
+                                                </div>
+                                                <div class="authour_dtls">
+                                                    <img src="{% static 'assets/images/signature.png' %}" class="sign"
+                                                         alt="تصویر">
+                                                    <h4>محسن نقیبی
+                                                        <span>رهبر و سرمایه گذار موسسه نوین الکترونیک</span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image_right">
+                                <img src="{% static 'assets/images/mohandes.png' %}" alt="تصویر">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---team intro--->
+        <!---image box section--->
+        <section class="image-section">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                        <div class="icon_box_all style_four">
+                            <div class="icon_content icon_imgs">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/icon-img-n-3.png' %}" class="img-fluid svg_image"
+                                         alt="icon png">
+                                    <img src="{% static 'assets/images/shape-1-small.png' %}" class="shape" alt="تصویر">
+                                </div>
+                                <div class="txt_content">
+                                    <h3>
+                                        <a href="our-team.html#" target="_blank" rel="nofollow">به صورت حرفه ای<br>آموزش
+                                            دیده</a>
+                                    </h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                        <div class="icon_box_all style_four">
+                            <div class="icon_content icon_imgs ">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/icon-img-n-4.png' %}" class="img-fluid svg_image"
+                                         alt="icon png">
+                                    <img src="{% static 'assets/images/shape-1-small.png' %}" class="shape" alt="تصویر">
+                                </div>
+                                <div class="txt_content">
+                                    <h3>
+                                        <a href="our-team.html#" target="_blank" rel="nofollow">پشتیبانی 24 ساعته</a>
+                                    </h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-4 mb-xl-0">
+                        <div class="icon_box_all style_four">
+                            <div class="icon_content icon_imgs ">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/icon-img-n-5.png' %}" class="img-fluid svg_image"
+                                         alt="icon png">
+                                    <img src="{% static 'assets/images/shape-1-small.png' %}" class="shape" alt="تصویر">
+                                </div>
+                                <div class="txt_content">
+                                    <h3>
+                                        <a href="our-team.html#" target="_blank" rel="nofollow">تمرکز بر دستیابی به
+                                            نتایج</a>
+                                    </h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="icon_box_all style_four">
+                            <div class="icon_content icon_imgs">
+                                <div class="icon">
+                                    <img src="{% static 'assets/images/fun-2.png' %}" class="img-fluid svg_image"
+                                         alt="icon png">
+                                    <img src="{% static 'assets/images/shape-1-small.png' %}" class="shape" alt="تصویر">
+                                </div>
+                                <div class="txt_content">
+                                    <h3>
+                                        <a href="our-team.html#" target="_blank" rel="nofollow">فراتر از انتظارات مشتری
+                                            ماست</a>
+                                    </h3>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--===============spacing==============-->
+            <div class="pd_bottom_70"></div>
+            <!--===============spacing==============-->
+        </section>
+        <!---image box section--->
+        <!---team section--->
+        <section class="team-section bg_light_1">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title_all_box style_one text-center dark_color">
+                            <div class="title_sections">
+                                <div class="before_title">تیم اختصاصی</div>
+                                <h2>تیم حرفه ای ما</h2>
+                            </div>
+                            <!--===============spacing==============-->
+                            <div class="pd_bottom_20"></div>
+                            <!--===============spacing==============-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    {% for i in teams %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                            <div class="team_box style_one">
+                                <div class="team_box_outer">
+                                    <div class="member_image">
+                                        <img src="{{ i.image.url }}" alt="تصویر تیم"/>
+                                    </div>
+                                    <div class="about_member">
+                                        <div class="authour_details">
+                                            <span>{{ i.position }}</span>
+                                            <h6>{{ i.name }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title_all_box style_one text-center dark_color">
+                            <div class="title_sections">
+                                <h2>تصاویر کلاس ها</h2>
+                            </div>
+                            <!--===============spacing==============-->
+                            <div class="pd_bottom_20"></div>
+                            <!--===============spacing==============-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    {% for i in teams %}
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                            <div class="team_box style_one">
+                                <div class="team_box_outer">
+                                    <div class="member_image">
+                                        <img src="{% static 'assets/images/logo-new-blue.jpg' %}" alt="تصویر تیم"/>
+                                    </div>
+                                    <div class="about_member">
+                                        <div class="authour_details">
+                                            <span>{{ i.position }}</span>
+                                            <h6>{{ i.name }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!--===============spacing==============-->
+            <div class="pd_bottom_70"></div>
+            <!--===============spacing==============-->
+        </section>
+        <!---team section--->
+
+        <!---newsteller--->
+{% endblock %}

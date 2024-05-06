@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>صفحه تکمیل مراحل خرید</title>
+    <style>
+        body {
+            background-image: url('{% static 'assets/images/bus.png' %}');
+            background-size: cover;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            padding: 30px;
+            width: 300px;
+            animation: slide-in 0.5s ease-out;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        label {
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"] {
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .popup {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            display: none;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 10% auto;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .popup-content p {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .popup-content button {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .popup-content button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>تمکیل خرید</h1>
+    <form method="post" action="{% url 'shop:callback_gateway' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="user_text">شماره:</label>
+            <input type="tel" name="user_text" class="form-control">
+            <label for="user_text">نام و نام خانوادگی:</label>
+            <input type="text" name="user_text1" class="form-control">
+            <label for="user_text">نام و نام خانوادگی:</label>
+            <input type="text" name="user_text2" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">ارسال</button>
+    </form>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <p>درخواست شما با موفقیت ثبت شد.شما میتوانید ار سریق کارشناسان ما محصول خود را پیگیری کنید.</p>
+        <button id="close-popup">بستن</button>
+    </div>
+</div>
+
+<script>
+    const form = document.querySelector('form');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 5000);
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+</script>
+</body>
+</html>

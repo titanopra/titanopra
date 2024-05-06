@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <!----header end----->
+    <div class="page_header_default style_one ">
+        <div class="parallax_cover">
+            <div class="simpleParallax"><img src="{% static 'assets/images/page-header-default.jpg' %}" alt="bg_image"
+                                             class="cover-parallax"></div>
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+                                دوره
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            {% for i in period %}
+                                <ul class="breadcrumb m-auto">
+                                    <li><a href="{% url 'blog:home' %}">خانه</a></li>
+                                    <li class="active"> دوره آموزشی {{ i.name }}</li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----header----->
+    <!----page-CONTENT----->
+    <div id="content" class="site-content ">
+        <!---faq--->
+        <section class="faqs-section">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            {% for i in period %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title_all_box style_one text-center dark_color">
+                                <div class="title_sections">
+                                    <div class="before_title"> سوالات مفید</div>
+                                    <h2>سوال و پاسخ درباره دوره <b style="color: #239293">{{ i.name }}</b></h2>
+                                </div>
+                                <!--===============spacing==============-->
+                                <div class="pd_top_15"></div>
+                                <!--===============spacing==============-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="faq_section type_two">
+                                <div class="block_faq">
+                                    <div class="accordion">
+                                        <dl>
+                                            <dt class="faq_header active">
+                                                {{ i.title }}<span class="icon-play"></span>
+                                            </dt>
+                                            <dd class="accordion-content hide" style="display:block;">
+                                                <p>{{ i.description }}</p>
+                                            </dd>
+                                            <dt class="faq_header ">
+                                                {{ i.title2 }}<span class="icon-play"></span>
+                                            </dt>
+                                            <dd class="accordion-content hide">
+                                                <p>{{ i.description2 }}</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <section class="faq_section type_two">
+                                <div class="block_faq">
+                                    <div class="accordion">
+                                        <dl>
+                                            <dt class="faq_header active">
+                                                {{ i.title3 }}<span class="icon-play"></span>
+                                            </dt>
+                                            <dd class="accordion-content hide" style="display:block;">
+                                                <p>{{ i.description3 }}</p>
+                                            </dd>
+                                            <dt class="faq_header">{{ i.title4 }}<span
+                                                    class="icon-play"></span>
+                                            </dt>
+                                            <dd class="accordion-content hide">
+                                                <p>{{ i.description4 }}</p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <!--===============spacing==============-->
+            <div class="pd_bottom_60"></div>
+            <!--===============spacing==============-->
+        </section>
+        <!---faqs--->
+        {% for i in period %}
+            <section class="expertise">
+                <div class="area_of_expertise">
+                    <div class="simpleParallax">
+                        <img src="{{ i.video_image.url }}" class="cover-parallax" alt="تصویر">
+                    </div>
+                    <div class="title_and_video">
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div id="28910872223">
+                                        <script type="text/JavaScript"
+                                                src="{{ i.video_link }}"></script>
+                                    </div>
+                                    <div id="28910872223">
+                                        <script type="text/JavaScript"
+                                                src="{{ i.video_link }}"></script>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-6">
+                                    <div class="title_all_box style_one text-end">
+                                        <div class="title_sections">
+                                            <h2>{{ i.video_title }}</h2>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expertise">
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 expertise_box">
+                                    <div class="step_number">
+                                        <h1>01.</h1>
+                                    </div>
+                                    <h2 class="title"><a href="#">{{ i.video_description }}</a>
+                                    </h2>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 expertise_box">
+                                    <div class="step_number">
+                                        <h1>02.</h1>
+                                    </div>
+                                    <h2 class="title">
+                                        <a href="#">{{ i.video_description2 }}</a>
+                                    </h2>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 expertise_box">
+                                    <div class="step_number">
+                                        <h1>03.</h1>
+                                    </div>
+                                    <h2 class="title">
+                                        <a href="#">{{ i.video_description3 }}</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+        <div class="pd_top_230"></div>
+        {% for i in period %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 mb-3 mb-lg-0 mb-xl-0">
+                        <div class="title_all_box style_one  dark_color">
+                            <div class="title_sections left">
+                                <h2>تصاویر دوره</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <p></p>
+                    </div>
+                </div>
+                <!--===============spacing==============-->
+                <div class="pd_bottom_20"></div>
+                <!--===============spacing==============-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="client_logo_carousel type_one">
+                            <div class="swiper-container" data-swiper='{
+                                        "autoplay": {
+                                          "delay": 6000
+                                        },
+                                        "freeMode": true,
+                                        "loop": true,
+                                        "speed": 1000,
+                                        "centeredSlides": false,
+                                        "slidesPerView": 4,
+                                        "spaceBetween": 30,
+                                        "pagination": {
+                                          "el": ".swiper-pagination",
+                                          "clickable": true
+                                        },
+                                        "navigation": {
+                                          "nextEl": ".swiper-button-next",
+                                          "prevEl": ".swiper-button-prev"
+                                        },
+                                        "breakpoints": {
+                                           "1200": {
+                                              "slidesPerView": 4
+                                           },
+                                           "1024": {
+                                            "slidesPerView": 3
+                                           },
+                                          "768": {
+                                            "slidesPerView": 2
+                                          },
+                                          "576": {
+                                            "slidesPerView": 1
+                                          }
+                                        }
+                                      }'>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="image">
+                                            <img src="{{ i.image1.url }}" alt="لوگو مشتریان">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image">
+                                            <img src="{{ i.image2.url }}"
+                                                 alt="لوگو مشتریان">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image">
+                                            <img src="{{ i.image3.url }}"
+                                                 alt="لوگو مشتریان">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="image">
+                                            <img src="{{ i.image4.url }}"
+                                                 alt="لوگو مشتریان">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="pd_top_230"></div>
+        <section class="call-to-action mr_bottom_minus_140">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="call_to_action style_two">
+                            <div class="image">
+                                <img src="{% static 'assets/images/call-to-pric-bg-1.jpg' %}" class="img-fluid"
+                                     alt="تصویر">
+                            </div>
+                            <div class="auto-container">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="left_content">
+                                            <div class="main_content">
+                                                <h1>برای کسب اطلاعات دوره و قیمت گذاری مشخصات خود را در فرم پایین وارد
+                                                    کنید تا کارشناسان ما در اولین فرصت با شما تماس بگیرند</h1>
+                                                <div class="bottom_content">
+                                                    <div class="call_content">
+                                                        <span class="icon-phone-call1 icon"></span>
+                                                        <div class="content_bx">
+                                                            <h2>در ارتباط باشید</h2>
+                                                            <p> ایمیل:support@novinelectronic.net و موبایل:
+                                                                09359356789 </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="image_right">
+                                            <img src="{% static 'assets/view_plans.png' %}"
+                                                 alt="تصویر">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form method="post" action="{% url 'academy:academy' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="user_text">شماره:</label>
+                                <input type="tel" name="user_text" class="form-control">
+                                <label for="user_text">نام و نام خانوادگی:</label>
+                                <input type="text" name="user_text1" class="form-control">
+                                <label for="cars">دوره مورد نظر خود را انتخاب کنید:</label>
+                                <select id="cars" name="user_text2">
+                                    <option value="برنامه نویسی">برنامه نویسی</option>
+                                    <option value="تعمیرات موبایل">تعمیرات موبایل</option>
+                                    <option value="تعمیرات برد">تعمیرات برد</option>
+                                    <option value="دوربین">دوربین</option>
+                                    <option value="دیگر دوره ها">دیگر دوره ها</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">ارسال</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service-section bg_light_1">
+            <!--===============spacing==============-->
+            <div class="pd_top_230"></div>
+            <!--===============spacing==============-->
+
+            <!--===============spacing==============-->
+            <div class="pd_bottom_90"></div>
+            <!--===============spacing==============-->
+        </section>
+        <section class="client-brand">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+
+            <!--===============spacing==============-->
+            <div class="pd_bottom_90"></div>
+            <!--===============spacing==============-->
+        </section>
+        <!---newsteller--->
+{% endblock %}

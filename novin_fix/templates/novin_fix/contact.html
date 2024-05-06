@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <!----header end----->
+    <div class="page_header_default style_one ">
+        <div class="parallax_cover">
+            <div class="simpleParallax"><img src="{% static 'assets/images/bus.png' %}" alt="bg_image"
+                                             class="cover-parallax"></div>
+        </div>
+        <div class="page_header_content">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="banner_title_inner">
+                            <div class="title_page">
+                                نوین فیکس
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="breadcrumbs creote">
+                            <ul class="breadcrumb m-auto">
+                                <li><a href="{% url 'blog:home' %}">خانه</a></li>
+                                <li class="active">نوین فیکس</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----header----->
+    <!----page-CONTENT----->
+    <div id="content" class="site-content ">
+
+        <section class="contact-section">
+            <!--===============spacing==============-->
+            <div class="pd_top_90"></div>
+            <!--===============spacing==============-->
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 mb-5 mb-lg-5 mb-xl-0">
+                        <div class="contact_form_box_all type_one">
+                            <div class="contact_form_box_inner">
+                                <div class="contact_form_shortcode">
+                                    <!-- templates/myapp/user_input_form.html -->
+                                    <form method="post" action="{% url 'fix:home' %}">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="user_text">شماره:</label>
+                                            <input type="tel" name="user_text" class="form-control">
+                                            <label for="user_text">نام و نام خانوادگی:</label>
+                                            <input type="text" name="user_text1" class="form-control">
+                                            <label for="cars">دوره مورد نظر خود را انتخاب کنید:</label>
+                                            <select id="cars" name="user">
+                                                <option value="لوازم خانگی">لوازم خانگی</option>
+                                                <option value="تلفن همراه">تلفن همراه</option>
+                                                <option value="تبلت">تبلت</option>
+                                                <option value="تبلت">تبلت</option>
+                                            </select>
+                                            <label for="user_text">مشکل محصول شما:</label>
+                                            <input type="text" name="user_text2" class="form-control">
+                                            <label for="user_text">آدرس:</label>
+                                            <input type="text" name="user_text3" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">ارسال</button>
+                                    </form>
+
+                                    <!-- در فایل template.html -->
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 pd_left_30">
+                        <div class="title_all_box style_one dark_color">
+                            <div class="title_sections left">
+                                <div class="before_title">اطلاعات تماس</div>
+                                <h2>با تیم ما در ارتباط باشید</h2>
+                                <p>
+                                    در دنیای پیشروفته امروزی,موسسه نوین الکلترونیک خدمات نوآورانه و دوره های آموزشی
+                                    تخصصی و متنوع,پیشتاز در عرصه فناوری است.ما مفتخریم که تخت نظارت<b>سازمان فنی و حرفه
+                                    ای</b>, با استفاده از <b>جدید ترین تجهیزات</b> و بهره گیری از دانش و تجربه <b>اساتید
+                                    مجرب</b> , محیطی ایده عال برای یادگیری و توسعه مهارت های شما فراهم آورده ایم.
+                                </p>
+                                <p>
+                                    موسسه ما با ارایه طیف وسیعی ار خدمات و آمورش های متنوع,متعهت به فراهم آوردن محیطی
+                                    پویا و حمایتی برای ارتقاء سطح دانش و مهارت های افراد در زمینه های مختلف تخصصی و
+                                    عمومی است.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="contact_box_content style_one">
+                            <div class="contact_box_inner icon_yes">
+                                <div class="icon_bx">
+                                    <span class="icon-placehosslder"></span>
+                                </div>
+                                <div class="contnet">
+                                    <h3> آدرس پستی </h3>
+                                    <p>کرمان,خیابان استقلال جنب بیمارستان سیدالشهدا ساختمان نوین طبقه2 واحد3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_15"></div>
+                        <!--===============spacing==============-->
+                        <div class="contact_box_content style_one">
+                            <div class="contact_box_inner icon_yes">
+                                <div class="icon_bx">
+                                    <span class="icon-phone-call"></span>
+                                </div>
+                                <div class="contnet">
+                                    <h3> پرسش های عمومی </h3>
+                                    <p>
+                                        شماره تلفن: 09359356789-03432521818
+                                    </p>
+                                    <p>
+                                        ایمیل: support@novinelectronic.net
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_15"></div>
+                        <!--===============spacing==============-->
+                        <div class="contact_box_content style_one">
+                            <div class="contact_box_inner icon_yes">
+                                <div class="icon_bx">
+                                    <span class="fa fa-clock-o"></span>
+                                </div>
+                                <div class="contnet">
+                                    <h3> ساعتی کاری </h3>
+                                    <p>
+                                        شنبه تا چهارشنبه:9الی 13 و 16 الی 20
+                                    </p>
+                                    <p>
+                                        پنج شنبه ها:9 الی 13
+                                    </p>
+                                    <p>
+                                        تعطیلی:جمعه
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--===============spacing==============-->
+                        <div class="pd_bottom_40"></div>
+                        <!--===============spacing==============-->
+                        <div class="social_media_v_one style_two">
+                            <ul>
+                                <li>
+                                    <a href="contact.html#"> <span class="fa fa-facebook"></span>
+                                        <small>فیسبوک</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html#"> <span class="fa fa-twitter"></span>
+                                        <small>توییتر</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html#"> <span class="fa fa-skype"></span>
+                                        <small>اسکایپ</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html#"> <span class="fa fa-instagram"></span>
+                                        <small>اینستاگرام</small>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--===============spacing==============-->
+            <div class="pd_top_70"></div>
+            <!--===============spacing==============-->
+        </section>
+        {#            <section class="contact-map-section">#}
+        {#               <div class="container">#}
+        {#                  <div class="row">#}
+        {#                     <div class="col-lg-12">#}
+        {#                        <section class="map-section">#}
+        {#                           <!--Map Outer-->#}
+        {#                           <div class="map-outer">#}
+        {#                              <div class="google-map"#}
+        {#                                 id="contact-google-map" #}
+        {#                                 data-map-lat="44.231172" #}
+        {#                                 data-map-lng="-76.485954" #}
+        {#                                 data-icon-path="{% static 'assets/images/pin.png' %}"#}
+        {#                                 data-map-title="آلباما, آمریکا"#}
+        {#                                 data-map-zoom="12" #}
+        {#                                 data-markers='{#}
+        {#                                 "marker-1": [42.231172, -84.485954, "<h4>دفتر شعبه</h4><p>4/99 آلباما, آمریکا</p>"],#}
+        {#                                 "marker-2": [44.231172, -76.485954, "<h4>دفتر شعبه</h4><p>4/99 آلباما, آمریکا</p>"],#}
+        {#                                 "marker-3": [40.880550, -78.393705, "<h4>دفتر شعبه</h4><p>4/99 Pennsylvania, آمریکا</p>"]#}
+        {#                                 }'>#}
+        {#                              </div>#}
+        {#                        </div>#}
+        {#                      </section>#}
+        {#                        #}
+        {#                     </div>#}
+        {#                  </div>#}
+        {#               </div>#}
+        {#               <!--===============spacing==============-->#}
+        {#               <div class="pd_top_90"></div>#}
+        {#               <!--===============spacing==============-->#}
+        {#            </section>#}
+        <!---newsteller--->
+
+{% endblock %}

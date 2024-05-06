@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'assets/css/cs.css' %}">
+
+  <title>پشتیبان</title>
+  <style>
+/* Adding the animation */
+.chat-window {
+  animation: slide-in 1s ease-out forwards;
+  display: none; /* Initially hide the chat window */
+}
+
+@keyframes slide-in {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Adding the blinking animation */
+.chat-button {
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  0.1% { opacity: 0.7; }
+  50% { opacity: 0.4; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Support button -->
+
+
+  <!-- Chat button -->
+  <button class="chat-button" onclick="toggleChat()">✉️</button>
+  
+  
+  <!-- Chat window -->
+  <div class="chat-window">
+    <div class="chat-messages">
+        <button class="close-button" onclick="closeChat()">×</button>
+      <!-- Admin chat messages -->
+      <div class="chat-message admin-message pulse">سلام کاربر گرامی</div>
+      <div class="chat-message admin-message pulse">پشتیبانی نوین الکترونیک هستم</div>
+      <div class="chat-message admin-message pulse">سوالات خود را بپرسید</div>
+      
+
+      <!-- User chat messages -->
+      
+    </div>
+    <div class="chat-input">
+      <textarea placeholder="Type your message here..."></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+   // JavaScript function to open chat window
+// JavaScript function to open chat window
+function openChat() {
+  const chatWindow = document.querySelector('.chat-window');
+  const chatButton = document.querySelector('.chat-button');
+  chatWindow.style.display = 'block';
+  chatButton.classList.add('hidden');
+}
+
+// JavaScript function to close chat window
+function closeChat() {
+  const chatWindow = document.querySelector('.chat-window');
+  const chatButton = document.querySelector('.chat-button');
+  chatWindow.style.display = 'none';
+  chatButton.classList.remove('hidden');
+}
+
+// JavaScript function to toggle chat window
+function toggleChat() {
+  const chatWindow = document.querySelector('.chat-window');
+  if (chatWindow.style.display === 'block') {
+    closeChat();
+  } else {
+    openChat();
+  }
+}
+
+// JavaScript function to send chat messages
+function sendMessage() {
+  const message = document.querySelector('.chat-input textarea').value.trim();
+  if (message.length === 0) return; // exit the function if the message is empty
+
+  const chatMessages = document.querySelector('.chat-messages');
+  const newMessage = document.createElement('div');
+  newMessage.className = 'chat-message user-message';
+  newMessage.textContent = message;
+  chatMessages.appendChild(newMessage);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  document.querySelector('.chat-input textarea').value = '';
+
+  // Add a delay before displaying the admin message
+  setTimeout(() => {
+    const adminMessage = document.createElement('div');
+    adminMessage.className = 'chat-message admin-message';
+    adminMessage.textContent = 'کارشناسان ما پیام شما را دریافت و در اولین فرصت بررسی میکنند';
+    chatMessages.appendChild(adminMessage);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 1000);
+}
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.15.0/dist/core.js"></script>
+    
+</body>
+</html>
