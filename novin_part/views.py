@@ -11,7 +11,7 @@ from .models import Part
 
 def shop(request):
     part = Part.objects.all()
-    return render(request,'novin_part/shop.html',{'part':part})
+    return render(request,'novin_part/index.html',{'part':part})
 
 def shop_details(request,pk):
     part = Part.objects.get(id=pk)

@@ -1,81 +1,129 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
-    <style>
-        body {
-            background-image: url('{% static 'assets/images/home/Untitled-1.png' %}');
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-        }
-
-        .button-container {
-            display: flex;
-            flex-wrap: wrap; /* Added to allow buttons to wrap to next line on smaller screens */
-            justify-content: center; /* Centered horizontally */
-            padding: 40px;
-            border-radius: 50px;
-            width: 100%; /* Changed to 100% for responsiveness */
-        }
-
-        .button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: rgb(255, 255, 255);
-            padding: 20px; /* Reduced padding for smaller screens */
-            text-align: center;
-            text-decoration: none;
-            border-radius: 30%;
-            font-size: 18px; /* Reduced font size for smaller screens */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 10px; /* Added margin for better spacing */
-            width: 250px; /* Set a width for better responsiveness */
-            height: 250px; /* Set a height for better responsiveness */
-        }
-
-        .button img {
-            border-radius: 25% / 20%;
-            width: 110%;
-            height: 110%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
-        .button span {
-            display: block;
-            margin-top: 10px;
-        }
-
-        .button:hover {
-            background-color: #239293;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'assets/home/style.css' %}">
 </head>
-<body>
-<div class="button-container">
-    <a href="{% url 'blog:home' %}" class="button">
-        <img src="{% static 'assets/images/اموزشگاه.png' %}" alt="Home">
-        <span style="">آموزشگاه نوین الکترونیک</span>
-    </a>
-    <a href="{% url 'shop:home' %}" class="button">
-        <img src="{% static 'assets/images/شاپ.png' %}" alt="Shop">
-        <span>نوین پارت</span>
-    </a>
-    <a href="{% url 'fix:home' %}" class="button">
-        <img src="{% static 'assets/images/فیکس.png' %}" alt="Truck">
-        <span>نوین فیکس</span>
-    </a>
-    <a href="{% url 'media:home' %}" class="button">
-        <img src="{% static 'assets/images/تکنوال (2).png' %}" alt="Truck">
-        <span>تکنوال</span>
-    </a>
+<body style="direction: rtl; text-align: right;">
+<header>
+    <nav>
+        <a href="">تماس با ما</a>
+    </nav>
+</header>
+
+<!-- carousel -->
+<div class="carousel">
+    <!-- list item -->
+    <div class="list">
+        <div class="item">
+            <img src="{% static 'assets/images/new/novininst.jpg' %}">
+            <div class="content" style="padding-right: 1%;">
+                <div class="title">آموزشگاه نوین الکترونیک</div>
+                <div class="topic">20سال سابقه تعمیرات وآموزش</div>
+
+                <div class="buttons">
+                    <button>شروع</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/novinpartimg.jpg' %}">
+            <div class="content" style="padding-right: 1%;">
+
+                <div class="title">فروشگاه نوین پارت</div>
+                <div class="topic"> معتبر ترین فروشگاه قطعات الکترونیکی و ابزار</div>
+                <div class="buttons">
+                    <button>SEE MORE</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/thetechnovalimg.jpg' %}">
+            <div class="content" style="padding-right: 1%;">
+                <div class="title">تکنوال</div>
+                <div class="topic">مرجع تخصصی تکنولوژی و راهنمای خرید</div>
+
+                <div class="buttons">
+                    <button>SEE MORE</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/novinfiximg.jpg' %}">
+            <div class="content" style="padding-right: 1%;">
+                <div class="title">نوین فیکس:</div>
+                <div class="topic">تعمیرات موبایل و گجت در محل</div>
+
+                <div class="buttons">
+                    <button>SEE MORE</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- list thumnail -->
+    <div class="thumbnail">
+        <div class="item">
+            <img src="{% static 'assets/images/new/novininst.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    آموزشگاه
+                </div>
+                <div class="description">
+                    نوین الکترونیک
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/novinpartimg.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    فروشگاه
+                </div>
+                <div class="description">
+                    نوین پارت
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/thetechnovalimg.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    تکنوال
+                </div>
+                <div class="description">
+                    مرجع تخصصی تکنولوژی
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'assets/images/new/novinfiximg.jpg' %}">
+            <div class="content">
+                <div class="title">
+                    نوین فیکس
+                </div>
+                <div class="description">
+                    تعمیرات درب محل
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- next prev -->
+
+    <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+    </div>
+    <!-- time running -->
+    <div class="time"></div>
 </div>
+
+<script src="{% static 'assets/home/app.js' %}"></script>
 </body>
 </html>

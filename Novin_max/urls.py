@@ -22,7 +22,7 @@ from . import settings
 from django.contrib import admin
 from django.urls import path
 from azbankgateways.urls import az_bank_gateways_urls
-from novin_part.views import go_to_gateway_view,callback_gateway_view
+from novin_part.views import go_to_gateway_view, callback_gateway_view
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -34,6 +34,8 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("bankgateways/", az_bank_gateways_urls()),
     path('', include('novin_part.urls')),
+    path(' admin/', admin.site.urls),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
+handler404 = 'home.views.not_found'

@@ -8,7 +8,7 @@ def home(request):
     teams = team_image.objects.all()
     classes = clasS.objects.all()
     cus = Customers.objects.all()
-    return render(request, 'home/index.html', {'images': images, 'teams': teams ,'classes':classes,'cus':cus})
+    return render(request, 'home/home2.html', {'images': images, 'teams': teams ,'classes':classes,'cus':cus})
 
 def team(request):
     teams = team_image.objects.all()
@@ -16,3 +16,7 @@ def team(request):
 
 def index(request):
     return render(request, 'home/home.html')
+
+
+def not_found(request, exception):
+    return render(request, 'home/404.html')

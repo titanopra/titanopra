@@ -3,8 +3,8 @@
 {% block base %}
     <style>
         .slider {
-            width: 300px;
-            height: 200px;
+            width: 500px;
+            height: 500px;
             overflow: hidden;
             position: relative;
         }
@@ -48,6 +48,34 @@
             }
             100% {
                 opacity: 0;
+            }
+        }
+
+        .responsive-image {
+            max-width: 100%; /* Sørger for at billedet ikke bliver større end sin forældre-element */
+            height: auto; /* Sørger for at billedet beholder sin proportionelle højde */
+            display: block; /* Sørger for at billedet bliver placeret korrekt */
+            margin: 0 auto; /* Sørger for at billedet bliver centreret */
+        }
+
+        /* Skærmstørrelser under 768px */
+        @media (max-width: 767px) {
+            .responsive-image {
+                width: 50%; /* Reducer billedernes størrelse til 50% på små skærmstørrelser */
+            }
+        }
+
+        /* Skærmstørrelser mellem 768px og 992px */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .responsive-image {
+                width: 75%; /* Reducer billedernes størrelse til 75% på mellemstore skærmstørrelser */
+            }
+        }
+
+        /* Skærmstørrelser over 992px */
+        @media (min-width: 992px) {
+            .responsive-image {
+                width: 100%; /* Billederne skal have fuld bredde på store skærmstørrelser */
             }
         }
     </style>
@@ -97,16 +125,16 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="slider">
                                 <div class="slide">
-                                    <img src="{{ i.image.url }}" alt="Image 1">
+                                    <img src="{{ i.image.url }}" alt="Image 1" class="responsive-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="{{ i.image2.url }}" alt="Image 2">
+                                    <img src="{{ i.image2.url }}" alt="Image 2" class="responsive-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="{{ i.image3.url }}" alt="Image 3">
+                                    <img src="{{ i.image3.url }}" alt="Image 3" class="responsive-image">
                                 </div>
                                 <div class="slide">
-                                    <img src="{{ i.image4.url }}" alt="Image 4">
+                                    <img src="{{ i.image4.url }}" alt="Image 4" class="responsive-image">
                                 </div>
                             </div>
                         </div>
@@ -116,6 +144,7 @@
                                 <p class="price"><span class="woocommerce-Price-amount amount"><bdi><span
                                         class="woocommerce-Price-currencySymbol"> ریال </span>{{ i.price }}</bdi></span>
                                 </p>
+                                <p><h6>{{ i.description }}</h6></p>
                                 <div class="woocommerce-product-details__short-description">
                                     <p>{{ i.name }}</p>
                                 </div>

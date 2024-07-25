@@ -1312,7 +1312,7 @@
 :root {
   --creote-family-one: "vazirmatn"!important;
   --creote-family-two: "vazirmatn"!important;
-  --primary-color-one: #078586;
+  --primary-color-one: #2f52d7;
   --primary-color-two: #282f3b;
   --primary-color-three: #f0f3f9;
   --color-white:#fff;
@@ -1329,11 +1329,11 @@
   --menu-color: #282f3b;
   --menu-color-white: #ffffff;
   --menu-dropdown-color: #282f3b;
-  --menu-active-color: #078586;
+  --menu-active-color: #2f52d7;
   --box-shadow: 0px 0px 40px 0px rgba(0,0,0,.09);
   --box-shadow-two: 0px 3px 16px 0px rgba(0 , 0 , 0 , .05);
   --footer-default-bgcolor: #1f2530;
-  --preloader-background-color: #078586;
+  --preloader-background-color: #2f52d7;
   --bg-light-color-one:#F0F3F947;
   --bg-light-color-two:#F0F3F969;
 }
